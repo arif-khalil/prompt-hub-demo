@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PromptHub - AI Prompts Platform</title>
+    <title>MCAPrompts - AI Prompts Platform</title>
     <style>
         * {
             margin: 0;
@@ -962,6 +962,108 @@
                 opacity: 1;
             }
         }
+
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .logo-icon {
+            height: 50px;
+            width: 100%;
+            background-image: url('mca-logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .login-logo {
+            display: grid;
+            grid-template-columns: 0.8fr auto;
+            justify-content: center;
+            align-items: center;
+            gap: 0px;
+            margin-bottom: 20px;
+            /*box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);*/
+            padding: 10px;
+            /*border-radius: 10px;*/
+        }
+
+        .login-logo .logo-text {
+            font-size: 2em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #333;
+        }   
+        @media (max-width: 768px) {
+            .header .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .header .logo-text {
+                font-size: 1.4em;
+            }
+        } 
+        
+        .header .logo-icon {
+            width: 70px;
+            height: 40px;
+            background-image: url('mca-logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header .logo-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+        }   
+        @media (max-width: 768px) {
+            .header .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .header .logo-text {
+                font-size: 1.4em;
+            }
+        }
+        
+        /* Security notice Styles */
+        .security-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 4px solid #f39c12;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+
+        .security-notice-title {
+            font-weight: 600;
+            color: #b7791f;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-notice-title::before {
+            content: "⚠️";
+            font-size: 1.1em;
+        }
+
+        .security-notice-text {
+            line-height: 1.5;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -970,7 +1072,10 @@
     <div class="login-container" id="loginPage">
         <div class="login-card">
             <div class="login-header">
-                <h1>PromptHub</h1>
+                <div class="login-logo">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">Prompts</div>
+                </div>
                 <p>Share and discover amazing AI prompts</p>
             </div>
             <form id="loginForm">
@@ -995,7 +1100,10 @@
         <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <div class="logo">PromptHub</div>
+                <div class="logo-container">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">Prompts</div>
+                </div>
                 <nav class="nav-menu">
                     <a href="#" class="nav-item active" onclick="showPage('home')">Home</a>
                     <a href="#" class="nav-item" onclick="showPage('prompts')">Prompts</a>
@@ -1023,7 +1131,7 @@
             <div id="home" class="page active">
                 <div class="home-layout">
                     <div class="home-main">
-                        <h2 style="margin-bottom: 20px; color: #333;">Welcome to PromptHub</h2>
+                        <h2 style="margin-bottom: 20px; color: #333;">Welcome to MCAPrompts</h2>
                         <p style="color: #666; font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">
                             Discover, create, and share amazing AI prompts with the community. Get inspired by trending
                             prompts,
@@ -1330,6 +1438,13 @@
                             <label for="promptContent">Prompt Content *</label>
                             <textarea id="promptContent" name="content" class="prompt-textarea" required
                                 placeholder="Enter your detailed prompt here..."></textarea>
+
+                            <div class="security-notice">
+                                <div class="security-notice-title">Security Notice: Responsible Use of AI Tools</div>
+                                <p class="security-notice-text">
+                                    Do not enter, share, or submit any company proprietary, confidential, or sensitive information into public generative AI platforms (e.g., ChatGPT, Bard, Copilot, etc.).
+                                </p>
+                            </div>
                         </div>
 
                         <div class="form-section">
@@ -2835,7 +2950,7 @@
 
         // Simulate notifications
         setTimeout(() => {
-            showNotification('Welcome to PromptHub!', 'success');
+            showNotification('Welcome to MCAPrompts!', 'success');
         }, 2000);
     </script>
 </body>
